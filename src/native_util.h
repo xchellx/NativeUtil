@@ -14,11 +14,11 @@ class NativeUtil : public Object {
 	GDCLASS(NativeUtil, Object);
 
 public:
-	Error memcpy_from_packed(uint8_t *p_dest, const Vector<uint8_t> p_src, const int p_count);
-        Error memcpy_to_packed(Vector<uint8_t> *p_dest, const uint8_t *p_src, const int p_count);
+	Error memcpy_from_packed(uint8_t *p_dst, const Vector<uint8_t> p_src, const int p_count);
+        Error memcpy_to_packed(Vector<uint8_t> *p_dst, const uint8_t *p_src, const int p_count);
 
 protected:
-	static void _bind_methods() {}
+	static void _bind_methods();
 };
 #endif // NATIVE_UTIL_H
 
