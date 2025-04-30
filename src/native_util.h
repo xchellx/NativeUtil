@@ -11,6 +11,7 @@
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/core/defs.hpp>
+#include <godot_cpp/core/type_info.hpp>
 
 using namespace godot;
 

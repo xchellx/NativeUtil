@@ -6,6 +6,7 @@
 #include <godot_cpp/templates/vector.hpp>
 #include <godot_cpp/core/error_macros.hpp>
 #include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/core/type_info.hpp>
 
 #include "native_util.h"
 
