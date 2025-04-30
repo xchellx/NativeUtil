@@ -1,6 +1,6 @@
 #include "native_util.h"
 
-#include "core/variant/native_ptr.h"
+#include <godot_cpp/core/variant/native_ptr.h>
 
 Error memcpy_from_packed(uint8_t *p_dest, const Vector<uint8_t> p_src, const int p_count) {
 	if (p_count > p_src.size())

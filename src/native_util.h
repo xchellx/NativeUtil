@@ -5,9 +5,10 @@
 #include <windows.h>
 #endif
 
-#include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/core/binder_common.hpp>
+
+using namespace godot;
 
 class NativeUtil : public Object {
 	GDCLASS(NativeUtil, Object);
