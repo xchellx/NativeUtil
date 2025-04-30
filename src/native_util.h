@@ -5,8 +5,12 @@
 #include <windows.h>
 #endif
 
+#include <godot_cpp/godot.hpp>
+#include <godot_cpp/templates/vector.hpp>
+#include <godot_cpp/core/error_macros.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/core/binder_common.hpp>
+#include <godot_cpp/core/defs.hpp>
 
 using namespace godot;
 
