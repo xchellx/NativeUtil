@@ -1,5 +1,7 @@
 #include "native_util.h"
 
+#include <godot_cpp/core/class_db.hpp>
+
 Error memcpy_from_packed(uint8_t *p_dst, const Vector<uint8_t> p_src, const int p_count) {
 	if (p_count > p_src.size())
 		return ERR_PARAMETER_RANGE_ERROR;
