@@ -5,8 +5,8 @@ import sys
 from methods import print_error
 
 
-libname = "EXTENSION-NAME"
-projectdir = "demo"
+libname = "NativeUtil"
+projectdir = "native_util"
 
 localEnv = Environment(tools=["default"], PLATFORM="")
 
