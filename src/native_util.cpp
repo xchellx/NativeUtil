@@ -2,20 +2,22 @@
 
 #include <godot_cpp/core/class_db.hpp>
 
-Error memcpy_from_packed(uint8_t *p_dst, const Vector<uint8_t> p_src, const int p_count) {
+static Error memcpy_from_packed(const int p_dst, const PackedByteArray p_src, const int p_count) {
 	if (p_count > p_src.size())
 		return ERR_PARAMETER_RANGE_ERROR;
 	else {
-		memcpy(p_dst, p_src.ptr(), p_count);
+		const uint8_t *p_dst_ptr = reinterpret_cast<const uint8_t *>(&p_dst);
+		memcpy(p_dst_ptr, p_src.ptr(), p_count);
         	return OK;
 	}
 }
 
-Error memcpy_to_packed(Vector<uint8_t> p_dst, const uint8_t *p_src, const int p_count) {
+static Error memcpy_to_packed(const PackedByteArray p_dst, const int p_src, const int p_count) {
         if (p_count > p_dst.size())
                 return ERR_PARAMETER_RANGE_ERROR;
         else {
-                memcpy(p_dst.ptrw(), p_src, p_count);
+		const uint8_t *p_src_ptr = reinterpret_cast<const uint8_t *>(&p_src);
+                memcpy(p_dst.ptrw(), p_src_ptr, p_count);
                 return OK;
         }
 }

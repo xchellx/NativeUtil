@@ -14,6 +14,7 @@
 #include <godot_cpp/core/method_bind.hpp>
 #include <godot_cpp/variant/variant.hpp>
 #include <godot_cpp/templates/vector.hpp>
+#include <godot_cpp/variant/typed_array.hpp>
 
 using namespace godot;
 
@@ -21,8 +22,8 @@ class NativeUtil : public Object {
 	GDCLASS(NativeUtil, Object);
 
 public:
-	static Error memcpy_from_packed(uint8_t *p_dst, const Vector<uint8_t> p_src, const int p_count);
-        static Error memcpy_to_packed(Vector<uint8_t> p_dst, const uint8_t *p_src, const int p_count);
+	static Error memcpy_from_packed(const int p_dst, const PackedByteArray p_src, const int p_count);
+        static Error memcpy_to_packed(const PackedByteArray p_dst, const int p_src, const int p_count);
 
 protected:
 	static void _bind_methods();
