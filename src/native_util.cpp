@@ -4,7 +4,7 @@
 #include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/core/class_db.hpp>
 
-Error memcpy_from_packed(int p_dst, const PackedByteArray p_src, int p_count) {
+Error NativeUtil::memcpy_from_packed(int p_dst, const PackedByteArray p_src, int p_count) {
 	if (p_count > p_src.size())
 		return ERR_PARAMETER_RANGE_ERROR;
 	else {
@@ -14,7 +14,7 @@ Error memcpy_from_packed(int p_dst, const PackedByteArray p_src, int p_count) {
 	}
 }
 
-Error memcpy_to_packed(PackedByteArray p_dst, const int p_src, int p_count) {
+Error NativeUtil::memcpy_to_packed(PackedByteArray p_dst, const int p_src, int p_count) {
         if (p_count > p_dst.size())
                 return ERR_PARAMETER_RANGE_ERROR;
         else {
