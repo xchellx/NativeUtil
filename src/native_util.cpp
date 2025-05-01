@@ -1,16 +1,20 @@
 #include "native_util.h"
 
-static Error memcpy_from_packed(const int p_dst, const PackedByteArray p_src, const int p_count) {
+#include <gdextension_interface.h>
+#include <godot_cpp/core/binder_common.hpp>
+#include <godot_cpp/core/class_db.hpp>
+
+static Error memcpy_from_packed(int p_dst, const PackedByteArray p_src, int p_count) {
 	if (p_count > p_src.size())
 		return ERR_PARAMETER_RANGE_ERROR;
 	else {
-		const uint8_t *p_dst_ptr = reinterpret_cast<const uint8_t *>(&p_dst);
+		uint8_t *p_dst_ptr = reinterpret_cast<uint8_t *>(&p_dst);
 		memcpy(p_dst_ptr, p_src.ptr(), p_count);
         	return OK;
 	}
 }
 
-static Error memcpy_to_packed(const PackedByteArray p_dst, const int p_src, const int p_count) {
+static Error memcpy_to_packed(PackedByteArray p_dst, const int p_src, int p_count) {
         if (p_count > p_dst.size())
                 return ERR_PARAMETER_RANGE_ERROR;
         else {
