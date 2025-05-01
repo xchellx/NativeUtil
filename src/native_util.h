@@ -5,15 +5,15 @@
 #include <windows.h>
 #endif
 
+#include <gdextension_interface.h>
 #include <godot_cpp/godot.hpp>
-#include <godot_cpp/templates/vector.hpp>
-#include <godot_cpp/core/error_macros.hpp>
-#include <godot_cpp/variant/variant.hpp>
-#include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/core/type_info.hpp>
-#include <gdextension_interface.h>
+#include <godot_cpp/core/error_macros.hpp>
+#include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/core/method_bind.hpp>
+#include <godot_cpp/variant/variant.hpp>
+#include <godot_cpp/templates/vector.hpp>
 
 using namespace godot;
 
