@@ -22,7 +22,7 @@ class NativeUtil : public Object {
 
 public:
 	static Error memcpy_from_packed(uint8_t *p_dst, const Vector<uint8_t> p_src, const int p_count);
-        static Error memcpy_to_packed(Vector<uint8_t> *p_dst, const uint8_t *p_src, const int p_count);
+        static Error memcpy_to_packed(Vector<uint8_t> p_dst, const uint8_t *p_src, const int p_count);
 
 protected:
 	static void _bind_methods();
