@@ -15,8 +15,8 @@ class NativeUtil : public Object {
 	GDCLASS(NativeUtil, Object);
 
 public:
-	static Error memcpy_from_packed(int p_dst, const PackedByteArray p_src, int p_count);
-        static Error memcpy_to_packed(PackedByteArray p_dst, const int p_src, int p_count);
+	static Error memcpy_from_packed(int p_dst, int p_dst_ofs, const PackedByteArray p_src, const int p_src_ofs, int p_count);
+        static Error memcpy_to_packed(PackedByteArray p_dst, int p_dst_ofs, const int p_src, const int p_src_ofs, int p_count);
 
 protected:
 	static void _bind_methods();

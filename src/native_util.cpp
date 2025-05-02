@@ -4,7 +4,7 @@
 #include <godot_cpp/core/binder_common.hpp>
 #include <godot_cpp/core/class_db.hpp>
 
-Error NativeUtil::memcpy_from_packed(int p_dst, const PackedByteArray p_src, int p_count) {
+Error NativeUtil::memcpy_from_packed(int p_dst, int p_dst_ofs, const PackedByteArray p_src, const int p_src_ofs, int p_count) {
 	if (p_count > p_src.size())
 		return ERR_PARAMETER_RANGE_ERROR;
 	else {
@@ -14,7 +14,7 @@ Error NativeUtil::memcpy_from_packed(int p_dst, const PackedByteArray p_src, int
 	}
 }
 
-Error NativeUtil::memcpy_to_packed(PackedByteArray p_dst, const int p_src, int p_count) {
+Error NativeUtil::memcpy_to_packed(PackedByteArray p_dst, int p_dst_ofs, const int p_src, const int p_src_ofs, int p_count) {
         if (p_count > p_dst.size())
                 return ERR_PARAMETER_RANGE_ERROR;
         else {
@@ -25,6 +25,6 @@ Error NativeUtil::memcpy_to_packed(PackedByteArray p_dst, const int p_src, int p
 }
 
 void NativeUtil::_bind_methods() {
-	ClassDB::bind_static_method("NativeUtil", D_METHOD("memcpy_from_packed", "dst", "src", "count"), &NativeUtil::memcpy_from_packed);
-	ClassDB::bind_static_method("NativeUtil", D_METHOD("memcpy_to_packed", "dst", "src", "count"), &NativeUtil::memcpy_to_packed);
+	ClassDB::bind_static_method("NativeUtil", D_METHOD("memcpy_from_packed", "dst", "dst_ofs", "src", "src_ofs", "count"), &NativeUtil::memcpy_from_packed);
+	ClassDB::bind_static_method("NativeUtil", D_METHOD("memcpy_to_packed", "dst", "dst_ofs", "src", "src_ofs", "count"), &NativeUtil::memcpy_to_packed);
 }
