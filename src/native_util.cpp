@@ -9,7 +9,7 @@ Error NativeUtil::memcpy_from_packed(int p_dst, int p_dst_ofs, const PackedByteA
 		return ERR_PARAMETER_RANGE_ERROR;
 	else {
 		uint8_t *p_dst_ptr = reinterpret_cast<uint8_t *>(&p_dst);
-		memcpy(p_dst_ptr, p_src.ptr(), p_count);
+		memcpy(p_dst_ptr + p_dst_ofs, p_src.ptr() + p_src_ofs, p_count);
         	return OK;
 	}
 }
@@ -19,7 +19,7 @@ Error NativeUtil::memcpy_to_packed(PackedByteArray p_dst, int p_dst_ofs, const i
                 return ERR_PARAMETER_RANGE_ERROR;
         else {
 		const uint8_t *p_src_ptr = reinterpret_cast<const uint8_t *>(&p_src);
-                memcpy(p_dst.ptrw(), p_src_ptr, p_count);
+                memcpy(p_dst.ptrw() + p_dst_ofs, p_src_ptr + p_src_ofs, p_count);
                 return OK;
         }
 }
